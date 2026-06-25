@@ -14,3 +14,6 @@ Included:
 - Services page removed
 
 Upload the files inside this folder to GitHub, not the folder itself.
+
+
+v14.1: Updated the Facebook popup to use the embroidery machine video in the top preview area.
