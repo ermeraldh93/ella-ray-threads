@@ -35,3 +35,96 @@
 .hero-actions-only .actions{justify-content:center;gap:18px}
 .hero-actions-only .btn{min-width:190px;text-align:center}
 @media(max-width:900px){.hero-minimal{min-height:82vh;padding:0 6vw 9vw}.hero-actions-only .actions{width:100%;display:flex;flex-direction:column;align-items:center}.hero-actions-only .btn{width:100%;max-width:310px}}
+
+/* v14 mobile refinements */
+@media (max-width: 700px){
+  /* Home hero: show more of the embroidery machine instead of zoomed-in crop */
+  .machine-hero.hero-minimal{
+    min-height: 68vh;
+    padding: 0 5vw 7vw;
+    align-items: flex-end;
+    background: #090909;
+  }
+  .machine-hero-bg{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center 18%;
+    transform: none;
+    filter: saturate(.95) contrast(1.04);
+  }
+  .hero-minimal .machine-hero-overlay{
+    background: linear-gradient(180deg, rgba(0,0,0,.08) 0%, rgba(0,0,0,.18) 52%, rgba(0,0,0,.78) 100%);
+  }
+  .hero-actions-only .actions{
+    gap: 10px;
+    margin-top: 0;
+  }
+  .hero-actions-only .btn{
+    width: 100%;
+    max-width: 285px;
+    padding: 14px 18px;
+  }
+
+  /* Portfolio mobile: cleaner, lighter, more editorial */
+  .page-hero{
+    padding: 18vw 7vw 8vw;
+  }
+  .page-hero h1{
+    font-size: 44px;
+    margin-bottom: 10px;
+  }
+  .page-hero p{
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .section{
+    padding: 13vw 5vw;
+  }
+  .section-head{
+    margin-bottom: 22px;
+  }
+  .section-head p{
+    display: none;
+  }
+  .portfolio-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .work,
+  .work.large{
+    margin: 0;
+    border: 0;
+    border-radius: 18px;
+    background: transparent;
+    box-shadow: none;
+  }
+  .work img,
+  .work.large img{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 18px;
+  }
+  .work-caption{
+    padding: 10px 2px 18px;
+  }
+  .work-caption strong{
+    font-size: 20px;
+  }
+  .work-caption span{
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 420px){
+  .machine-hero.hero-minimal{
+    min-height: 62vh;
+  }
+  .machine-hero-bg{
+    background-position: center 12%;
+  }
+}
