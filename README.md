@@ -1,8 +1,11 @@
-# Ella Rae Threads Website v2
+# Ella Rae Threads v3
 
-Static Cloudflare Pages website for ellaraethreads.com.
+Premium boutique corporate embroidery website.
 
-## Upload instructions
-Upload everything inside this folder to the GitHub repo `ella-ray-threads`, replacing existing files.
+Upload the contents of this folder to the GitHub repository root:
 
-Cloudflare Pages will redeploy automatically.
+- index.html
+- README.md
+- assets folder
+
+Cloudflare Pages will automatically deploy after the GitHub commit.
