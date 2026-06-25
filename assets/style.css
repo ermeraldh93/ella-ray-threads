@@ -35,3 +35,11 @@
 .hero-actions-only .actions{justify-content:center;gap:18px}
 .hero-actions-only .btn{min-width:190px;text-align:center}
 @media(max-width:900px){.hero-minimal{min-height:82vh;padding:0 6vw 9vw}.hero-actions-only .actions{width:100%;display:flex;flex-direction:column;align-items:center}.hero-actions-only .btn{width:100%;max-width:310px}}
+
+/* v15: full-screen homepage hero video */
+.video-hero{background:#090909}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;filter:saturate(.95) contrast(1.04)}
+.video-hero .machine-hero-bg{display:none}
+.video-hero .machine-hero-overlay{z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,.20) 48%,rgba(0,0,0,.78) 100%)}
+.video-hero .machine-hero-copy{z-index:2}
+@media(max-width:900px){.video-hero{min-height:82vh}.hero-video{object-position:center center}.video-hero .machine-hero-overlay{background:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.22) 50%,rgba(0,0,0,.82) 100%)}}
