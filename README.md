@@ -1,3 +1,1 @@
-Ella Rae Threads v12
-
-Homepage hero simplified: removed headline and paragraph, centered hero buttons over the embroidery machine image.
+Ella Rae Threads v13.8 — matched header wordmark and upgraded Facebook popup preview.
