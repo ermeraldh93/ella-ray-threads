@@ -27,3 +27,11 @@
 .btn-ghost{background:rgba(255,255,255,.04);color:#fff;border:1px solid rgba(255,255,255,.42)}
 .btn-ghost:hover{background:rgba(255,255,255,.12)}
 @media(max-width:900px){.machine-hero{min-height:78vh;padding:18vw 6vw 14vw}.machine-hero-bg{background-position:63% center}.machine-hero-overlay{background:linear-gradient(90deg,rgba(0,0,0,.84),rgba(0,0,0,.55))}.machine-hero-copy h1{font-size:52px}.machine-hero-copy p{font-size:17px}.machine-hero .actions{gap:10px}.machine-hero .btn{width:100%;max-width:280px}}
+
+/* v12: minimal homepage hero with no headline or paragraph */
+.hero-minimal{min-height:94vh;align-items:flex-end;justify-content:center;padding:0 6vw 7vw}
+.hero-minimal .machine-hero-overlay{background:linear-gradient(180deg,rgba(0,0,0,.06) 0%,rgba(0,0,0,.18) 52%,rgba(0,0,0,.72) 100%)}
+.hero-actions-only{max-width:none;width:100%;display:flex;justify-content:center;padding-top:0}
+.hero-actions-only .actions{justify-content:center;gap:18px}
+.hero-actions-only .btn{min-width:190px;text-align:center}
+@media(max-width:900px){.hero-minimal{min-height:82vh;padding:0 6vw 9vw}.hero-actions-only .actions{width:100%;display:flex;flex-direction:column;align-items:center}.hero-actions-only .btn{width:100%;max-width:310px}}

@@ -1,5 +1,3 @@
-# Ella Rae Threads v10
+Ella Rae Threads v12
 
-Homepage update using the embroidery machine hero image.
-
-Upload the contents of this folder to the root of the GitHub repository.
+Homepage hero simplified: removed headline and paragraph, centered hero buttons over the embroidery machine image.
