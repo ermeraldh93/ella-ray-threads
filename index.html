@@ -1,83 +1,120 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ella Rae Threads | Custom Embroidery in Tampa Bay</title>
-  <meta name="description" content="Ella Rae Threads creates premium custom embroidered hats, polos, uniforms, and apparel for businesses, teams, events, and brands in Tampa Bay, Florida." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ella Rae Threads | Premium Custom Embroidery in Tampa Bay</title>
+  <meta name="description" content="Ella Rae Threads creates premium custom embroidered hats, apparel, business uniforms, team gear, and personalized embroidery for Tampa Bay and beyond." />
   <meta property="og:title" content="Ella Rae Threads | Premium Custom Embroidery" />
   <meta property="og:description" content="Custom embroidered hats and apparel for businesses, teams, brands, and special events." />
-  <meta property="og:image" content="assets/hero-hats.jpg" />
-  <link rel="icon" href="assets/logo.jpg" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta property="og:image" content="assets/logo.jpeg" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--gold:#bd8a35;--gold2:#e8c980;--ink:#17130e;--muted:#6d6257;--cream:#fbf8f2;--soft:#efe7db;--white:#fff;--shadow:0 22px 70px rgba(20,15,8,.14);--radius:24px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6} img{max-width:100%;display:block} a{text-decoration:none;color:inherit}.wrap{width:min(1160px,92vw);margin:auto}.topbar{background:#15110d;color:#f6efe4;text-align:center;font-size:13px;padding:9px 14px;letter-spacing:.08em;text-transform:uppercase}.nav{position:sticky;top:0;z-index:50;background:rgba(251,248,242,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(189,138,53,.18)}.navin{height:86px;display:flex;align-items:center;justify-content:space-between;gap:18px}.logo{display:flex;align-items:center;gap:14px}.logo img{width:160px;height:auto}.menu{display:flex;gap:26px;font-weight:700;font-size:14px;color:#3a322a}.menu a:hover{color:var(--gold)}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:14px 22px;font-weight:800;letter-spacing:.01em;cursor:pointer;transition:.25s}.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#17110a;box-shadow:0 12px 30px rgba(189,138,53,.28)}.btn-dark{background:#17130e;color:#fff}.btn-outline{border:1px solid rgba(189,138,53,.35);color:#17130e;background:rgba(255,255,255,.55)}.btn:hover{transform:translateY(-2px)}.hero{position:relative;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 10% 10%,rgba(232,201,128,.28),transparent 28%),radial-gradient(circle at 85% 15%,rgba(189,138,53,.18),transparent 34%)}.hero-grid{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:42px;align-items:center;min-height:680px;padding:72px 0}.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(189,138,53,.32);background:#fff8ec;border-radius:999px;padding:8px 14px;color:#8b6020;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.h1{font-family:'Cormorant Garamond',serif;font-size:clamp(56px,7vw,98px);line-height:.9;margin:20px 0 18px;letter-spacing:-.04em}.lead{font-size:clamp(18px,2vw,22px);color:#554a3f;max-width:620px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.hero-card{position:relative}.hero-card .main-photo{border-radius:36px;box-shadow:var(--shadow);aspect-ratio:1/1.05;object-fit:cover}.float-card{position:absolute;left:-28px;bottom:36px;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);padding:18px 20px;border-radius:22px;box-shadow:0 18px 50px rgba(0,0,0,.14);max-width:270px}.float-card strong{display:block;font-size:28px;line-height:1}.float-card span{font-size:13px;color:var(--muted);font-weight:700}.section{padding:86px 0}.section-title{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:30px}.section-title h2{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,64px);line-height:1;margin:0}.section-title p{max-width:520px;color:var(--muted);font-size:17px}.strip{background:#17130e;color:#fff;padding:24px 0}.stripin{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}.stat strong{display:block;color:var(--gold2);font-size:25px}.stat span{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#d7c9b6}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid rgba(189,138,53,.18);border-radius:var(--radius);padding:28px;box-shadow:0 16px 45px rgba(20,15,8,.06)}.card .icon{font-size:33px;margin-bottom:14px}.card h3{font-size:22px;margin:0 0 8px}.card p{color:var(--muted);margin:0}.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.tile{position:relative;border-radius:24px;overflow:hidden;background:#ddd;min-height:230px;box-shadow:0 14px 38px rgba(0,0,0,.08)}.tile.big{grid-column:span 2;grid-row:span 2}.tile img{width:100%;height:100%;object-fit:cover;transition:.45s}.tile:hover img{transform:scale(1.05)}.tile .label{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(23,19,14,.78);color:#fff;border-radius:16px;padding:12px 14px;font-weight:800}.split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}.photo-stack{display:grid;grid-template-columns:1fr 1fr;gap:14px}.photo-stack img{height:270px;width:100%;object-fit:cover;border-radius:26px;box-shadow:0 16px 45px rgba(0,0,0,.1)}.quote{background:#17130e;color:#fff;border-radius:38px;padding:46px;position:relative;overflow:hidden}.quote:before{content:"";position:absolute;inset:auto -10% -40% auto;width:420px;height:420px;border-radius:50%;background:rgba(189,138,53,.22)}.quote h2{font-family:'Cormorant Garamond',serif;font-size:56px;line-height:1;margin:0 0 10px}.quote p{color:#d7c9b6}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:13px;font-weight:800;color:#e9ddce}.field input,.field select,.field textarea{width:100%;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;border-radius:14px;padding:14px 14px;font:inherit}.field textarea{min-height:110px;resize:vertical}.field input::placeholder,.field textarea::placeholder{color:#bdb2a5}.note{font-size:13px;color:#bdb2a5;margin-top:14px}.about{background:#fff;border-top:1px solid rgba(189,138,53,.15);border-bottom:1px solid rgba(189,138,53,.15)}.footer{background:#0f0c09;color:#fff;padding:54px 0 28px}.footgrid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:30px}.footer img{width:210px;background:#fff;border-radius:18px;padding:10px}.footer a{color:#e8c980}.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:22px;color:#bdb2a5;font-size:13px}.mobile-cta{display:none}@media(max-width:900px){.menu{display:none}.navin{height:74px}.logo img{width:140px}.hero-grid,.split{grid-template-columns:1fr;min-height:auto;padding:42px 0}.float-card{left:14px;bottom:14px}.stripin{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.tile.big{grid-column:span 2}.section-title{display:block}.formgrid{grid-template-columns:1fr}.quote{padding:30px 20px;border-radius:26px}.quote h2{font-size:42px}.footgrid{grid-template-columns:1fr}.mobile-cta{display:flex;position:fixed;bottom:14px;left:14px;right:14px;z-index:99}.mobile-cta .btn{width:100%}}@media(max-width:560px){.gallery{grid-template-columns:1fr}.tile.big{grid-column:auto;grid-row:auto}.hero-actions{display:grid}.btn{width:100%}.photo-stack{grid-template-columns:1fr}.photo-stack img{height:230px}.stripin{grid-template-columns:1fr}.h1{font-size:52px}.section{padding:62px 0}}
+  </style>
 </head>
 <body>
-<header class="header">
-  <a class="brand" href="#home"><img src="assets/logo.jpg" alt="Ella Rae Threads logo"></a>
-  <button class="menu" aria-label="Open menu">☰</button>
-  <nav class="nav">
-    <a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#faq">FAQ</a><a class="pill" href="#quote">Request Quote</a>
-  </nav>
-</header>
-<main id="home">
-<section class="hero">
-  <div class="hero-copy reveal">
-    <p class="eyebrow">Tampa Bay • Custom Embroidery</p>
-    <h1>Premium embroidery for hats, apparel & brands.</h1>
-    <p>Ella Rae Threads creates clean, professional custom embroidery for businesses, teams, events, and one-of-a-kind personal designs.</p>
-    <div class="actions"><a class="btn primary" href="#quote">Build My Order</a><a class="btn" href="#work">View Gallery</a></div>
-    <div class="badges"><span>Custom Hats</span><span>Business Apparel</span><span>Bulk Orders</span></div>
-  </div>
-  <div class="hero-image reveal"><img src="assets/hero-hats.jpg" alt="Custom embroidered hats by Ella Rae Threads"><div class="stamp">Premium Stitch Quality</div></div>
-</section>
-<section class="strip reveal"><span>Richardson</span><span>OTTO</span><span>Decky</span><span>Columbia</span><span>Business Uniforms</span><span>Team Hats</span></section>
-<section id="work" class="section">
-  <div class="section-head reveal"><p class="eyebrow">Featured Work</p><h2>Made to be worn, noticed, and remembered.</h2></div>
-  <div class="gallery">
-    <figure class="big reveal"><img src="assets/gallery-fencing.jpg" alt="Bulk company embroidered hats"><figcaption>Business Logo Hats</figcaption></figure>
-    <figure class="reveal"><img src="assets/gallery-shirts.jpg" alt="Embroidered company shirts"><figcaption>Company Shirts</figcaption></figure>
-    <figure class="reveal"><img src="assets/gallery-dcr.jpg" alt="Blue embroidered dad hats"><figcaption>Small Business Orders</figcaption></figure>
-    <figure class="reveal"><img src="assets/gallery-gators.jpg" alt="Custom Gators hat"><figcaption>Game Day Designs</figcaption></figure>
-    <figure class="reveal"><img src="assets/gallery-fair.jpg" alt="Custom fair buyer hats"><figcaption>Event Hats</figcaption></figure>
-    <figure class="reveal"><img src="assets/gallery-look.jpg" alt="Custom Letter Cook hats"><figcaption>Personalized Hats</figcaption></figure>
-  </div>
-</section>
-<section id="services" class="section warm">
-  <div class="section-head reveal"><p class="eyebrow">What We Make</p><h2>Custom embroidery for every kind of brand.</h2></div>
-  <div class="cards">
-    <article class="card reveal"><h3>Custom Hats</h3><p>Trucker hats, flat bills, dad hats, snapbacks, rope hats, performance hats, and more.</p></article>
-    <article class="card reveal"><h3>Business Apparel</h3><p>Logo polos, work shirts, team uniforms, and branded apparel for crews and staff.</p></article>
-    <article class="card reveal"><h3>Events & Teams</h3><p>Hats and apparel for sports teams, fairs, schools, parties, fundraisers, and special events.</p></article>
-    <article class="card reveal"><h3>Personal Designs</h3><p>Funny hats, gifts, custom phrases, family designs, and unique one-off projects.</p></article>
-  </div>
-</section>
-<section id="process" class="section split">
-  <div class="photo-card reveal"><img src="assets/gallery-custom.jpg" alt="Custom embroidered hat"></div>
-  <div class="reveal"><p class="eyebrow">How It Works</p><h2>Simple from idea to finished order.</h2>
-    <div class="steps"><div><b>01</b><h3>Send your idea</h3><p>Share your logo, phrase, design, or inspiration.</p></div><div><b>02</b><h3>Choose products</h3><p>Pick hats, shirts, colors, quantities, and embroidery location.</p></div><div><b>03</b><h3>Approve details</h3><p>Ella Rae Threads confirms the design and order details.</p></div><div><b>04</b><h3>Get stitched</h3><p>Your order is embroidered and prepared for pickup or delivery.</p></div></div>
-  </div>
-</section>
-<section id="about" class="section about">
-  <div class="about-box reveal"><img src="assets/logo.jpg" alt="Ella Rae Threads"><p class="eyebrow">About Ella Rae Threads</p><h2>Boutique feel. Professional finish.</h2><p>Ella Rae Threads helps businesses, teams, and families bring their ideas to life through quality custom embroidery. From company hats and work shirts to fun personal designs, each order is handled with care and attention to detail.</p><p class="gold">Serving Tampa Bay, Florida and surrounding areas.</p></div>
-</section>
-<section id="quote" class="quote">
-  <div class="quote-copy reveal"><p class="eyebrow">Build Your Order</p><h2>Request a custom quote.</h2><p>Tell us what you want made. This form is set up for GitHub now and can be connected to Supabase next for quote tracking and logo uploads.</p></div>
-  <form class="quote-form reveal" id="quoteForm">
-    <div class="row"><input required name="name" placeholder="Name *"><input name="company" placeholder="Company / Team"></div>
-    <div class="row"><input required type="email" name="email" placeholder="Email *"><input name="phone" placeholder="Phone"></div>
-    <div class="row"><select name="type"><option>What do you need?</option><option>Custom hats</option><option>Business apparel</option><option>Hats and shirts</option><option>Personal design</option></select><select name="quantity"><option>Quantity</option><option>1-5</option><option>6-11</option><option>12-24</option><option>25-49</option><option>50+</option><option>100+</option></select></div>
-    <div class="row"><input name="style" placeholder="Hat/apparel style or brand"><input name="deadline" placeholder="Deadline"></div>
-    <label class="upload">Upload logo/artwork <input type="file" name="logo" accept="image/*,.pdf,.ai,.eps,.svg"></label>
-    <textarea name="notes" placeholder="Tell us about colors, design placement, thread colors, pickup/shipping, or anything else."></textarea>
-    <button class="btn primary light" type="submit">Send Quote Request</button><p class="form-message"></p>
-  </form>
-</section>
-<section id="faq" class="section faq"><div class="section-head reveal"><p class="eyebrow">FAQ</p><h2>Questions customers ask.</h2></div>
-  <details class="reveal"><summary>Can I send my own logo?</summary><p>Yes. Customers can send logos, ideas, sketches, or existing artwork.</p></details>
-  <details class="reveal"><summary>Do you make business uniforms?</summary><p>Yes. Ella Rae Threads can make embroidered hats, polos, work shirts, and apparel for businesses.</p></details>
-  <details class="reveal"><summary>Do you handle small and bulk orders?</summary><p>Yes. Quote requests can be submitted for small custom jobs or larger business/team orders.</p></details>
-</section>
-</main>
-<footer><img src="assets/logo.jpg" alt="Ella Rae Threads"><p>Premium custom embroidery in Tampa Bay, Florida.</p><p><a href="mailto:Ellaraethreads@gmail.com">Ellaraethreads@gmail.com</a> • <a href="https://www.facebook.com/share/18rKJjrLxv/?mibextid=wwXIfr">Facebook</a></p></footer>
-<script src="script.js"></script>
-</body></html>
+  <div class="topbar">Premium Custom Embroidery • Tampa Bay, FL • Hats • Apparel • Business Branding</div>
+  <header class="nav">
+    <div class="wrap navin">
+      <a href="#home" class="logo"><img src="assets/logo.jpeg" alt="Ella Rae Threads logo"></a>
+      <nav class="menu"><a href="#work">Our Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#quote">Quote</a><a href="#contact">Contact</a></nav>
+      <a class="btn btn-primary" href="#quote">Build Your Order</a>
+    </div>
+  </header>
+
+  <main id="home" class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Tampa Bay Custom Embroidery</span>
+        <h1 class="h1">Premium custom embroidery for hats & apparel.</h1>
+        <p class="lead">Ella Rae Threads creates custom embroidered hats, work shirts, team gear, and branded apparel for businesses, events, and everyday wear.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#quote">Start a Quote</a><a class="btn btn-outline" href="#work">View Our Work</a></div>
+      </div>
+      <div class="hero-card">
+        <img class="main-photo" src="assets/BDE000DD-27F0-4072-9706-A05580C99092.jpeg" alt="Custom embroidered hats by Ella Rae Threads">
+        <div class="float-card"><strong>Custom stitched.</strong><span>Hats, polos, uniforms, team gear, and personalized orders.</span></div>
+      </div>
+    </div>
+  </main>
+
+  <section class="strip"><div class="wrap stripin"><div class="stat"><strong>Hats</strong><span>Custom logos</span></div><div class="stat"><strong>Apparel</strong><span>Business uniforms</span></div><div class="stat"><strong>Teams</strong><span>Sports & events</span></div><div class="stat"><strong>Local</strong><span>Tampa Bay, FL</span></div></div></section>
+
+  <section id="services" class="section">
+    <div class="wrap">
+      <div class="section-title"><h2>Made for businesses, brands, teams & personal style.</h2><p>From a single personalized hat to a full company order, every piece is stitched with care and built to represent your brand with pride.</p></div>
+      <div class="cards">
+        <div class="card"><div class="icon">🧢</div><h3>Custom Embroidered Hats</h3><p>Richardson, OTTO, Decky, snapbacks, truckers, dad hats, performance hats, and more.</p></div>
+        <div class="card"><div class="icon">👕</div><h3>Business Apparel</h3><p>Professional embroidery for polos, work shirts, uniforms, crews, and branded staff apparel.</p></div>
+        <div class="card"><div class="icon">✨</div><h3>Personalized Designs</h3><p>Funny hats, event gifts, family orders, fishing designs, sports themes, and one-of-a-kind ideas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="section about">
+    <div class="wrap">
+      <div class="section-title"><h2>Featured embroidery work.</h2><p>A real look at hats and apparel stitched by Ella Rae Threads for local customers, businesses, and custom orders.</p></div>
+      <div class="gallery">
+        <div class="tile big"><img src="assets/30971120-03FF-4306-B480-DF2C32A1B49C.jpeg" alt="Bulk custom embroidered fencing hats"><div class="label">Bulk Business Hats</div></div>
+        <div class="tile"><img src="assets/E1E21924-DC07-4423-8A35-82ECF8BBF73D.jpeg" alt="Custom embroidered camo hat"><div class="label">Statement Hats</div></div>
+        <div class="tile"><img src="assets/C09C7BF9-C322-4B6F-AEDA-6EC62656B9C9.jpeg" alt="Custom embroidered Let'em Cook hats"><div class="label">Custom Sets</div></div>
+        <div class="tile"><img src="assets/4929DED9-D5C0-4C53-B054-94F9DC838661.jpeg" alt="Embroidered business work shirts"><div class="label">Work Shirts</div></div>
+        <div class="tile"><img src="assets/F8320A32-3379-422A-B19E-4E6660A0904D.jpeg" alt="Blue embroidered dad hats"><div class="label">Business Branding</div></div>
+        <div class="tile"><img src="assets/8365E7A2-D553-4118-9B9B-F605EDE22152.jpeg" alt="Custom embroidered fishing logo hats"><div class="label">Outdoor Brands</div></div>
+        <div class="tile"><img src="assets/AE8B9E75-F946-49EA-9DD5-E4D1573BBE7F.jpeg" alt="Pink custom embroidered trucker hat"><div class="label">Personalized Orders</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">Simple Process</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:56px;line-height:1;margin:16px 0">From idea to finished embroidery.</h2>
+        <div class="cards" style="grid-template-columns:1fr;gap:12px">
+          <div class="card"><h3>1. Send your logo or idea</h3><p>Upload your artwork, business logo, phrase, or concept.</p></div>
+          <div class="card"><h3>2. Choose your product</h3><p>Select hats, shirts, uniforms, colors, quantity, and placement.</p></div>
+          <div class="card"><h3>3. Approve & stitch</h3><p>Once details are confirmed, your order is embroidered and prepared.</p></div>
+        </div>
+      </div>
+      <div class="photo-stack"><img src="assets/F5CEF0D1-EB85-42A4-93E6-4A41594D06E7.jpeg" alt="Custom fair buyer hats"><img src="assets/A53C9750-306C-4842-9144-135CEA2431FE.jpeg" alt="Go Gators embroidered hat"></div>
+    </div>
+  </section>
+
+  <section id="quote" class="section">
+    <div class="wrap quote">
+      <h2>Build your order.</h2>
+      <p>Use this form to start your quote. It will open an email with your details ready to send to Ella Rae Threads.</p>
+      <form class="formgrid" action="mailto:ellaraethreads@gmail.com" method="post" enctype="text/plain">
+        <div class="field"><label>Name</label><input name="Name" placeholder="Your name" required></div>
+        <div class="field"><label>Phone / Email</label><input name="Contact" placeholder="Best way to reach you" required></div>
+        <div class="field"><label>Order Type</label><select name="Order Type"><option>Custom hats</option><option>Business shirts / uniforms</option><option>Hats and apparel</option><option>Team / event order</option><option>Personalized gift</option></select></div>
+        <div class="field"><label>Quantity</label><select name="Quantity"><option>1-5</option><option>6-12</option><option>13-24</option><option>25-50</option><option>50+</option></select></div>
+        <div class="field full"><label>Project Details</label><textarea name="Details" placeholder="Tell us what you need: hat style, colors, logo placement, deadline, and any special details."></textarea></div>
+        <div class="field full"><button class="btn btn-primary" type="submit">Email My Quote Request</button><div class="note">Logo upload will be added in the next version with Supabase. For now, attach your logo after the email opens.</div></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="section about">
+    <div class="wrap split">
+      <div><img style="border-radius:34px;box-shadow:var(--shadow)" src="assets/logo.jpeg" alt="Ella Rae Threads logo"></div>
+      <div><span class="eyebrow">About Ella Rae Threads</span><h2 style="font-family:'Cormorant Garamond',serif;font-size:56px;line-height:1;margin:16px 0">Embroidery that helps your brand stand out.</h2><p style="color:var(--muted);font-size:18px">Ella Rae Threads is a Tampa Bay custom embroidery company creating high-quality hats, apparel, and branded pieces for businesses, teams, events, and personal orders. Every stitch is designed to make your logo, message, or idea feel clean, professional, and ready to wear.</p><a class="btn btn-dark" href="https://www.facebook.com/share/18rKJjrLxv/?mibextid=wwXIfr" target="_blank" rel="noopener">Visit Facebook</a></div>
+    </div>
+  </section>
+
+  <footer id="contact" class="footer">
+    <div class="wrap footgrid">
+      <div><img src="assets/logo.jpeg" alt="Ella Rae Threads logo"><p>Premium custom embroidery for hats, apparel, business uniforms, teams, events, and personalized orders.</p></div>
+      <div><h3>Contact</h3><p>Tampa Bay, FL<br><a href="mailto:ellaraethreads@gmail.com">ellaraethreads@gmail.com</a></p></div>
+      <div><h3>Quick Links</h3><p><a href="#work">Gallery</a><br><a href="#services">Services</a><br><a href="#quote">Request a Quote</a><br><a href="https://www.facebook.com/share/18rKJjrLxv/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a></p></div>
+    </div>
+    <div class="wrap copy">© 2026 Ella Rae Threads. Custom embroidery serving Tampa Bay and beyond.</div>
+  </footer>
+  <div class="mobile-cta"><a class="btn btn-primary" href="#quote">Build Your Order</a></div>
+</body>
+</html>
