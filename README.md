@@ -1,11 +1,8 @@
-# Ella Rae Threads v3
+# Ella Rae Threads v4
 
-Premium boutique corporate embroidery website.
+Premium static website for Ella Rae Threads.
 
-Upload the contents of this folder to the GitHub repository root:
+Upload the contents of this folder to the root of the GitHub repository.
+Do not upload the folder itself.
 
-- index.html
-- README.md
-- assets folder
-
-Cloudflare Pages will automatically deploy after the GitHub commit.
+Cloudflare Pages will automatically redeploy after the GitHub commit.
