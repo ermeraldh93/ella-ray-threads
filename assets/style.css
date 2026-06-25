@@ -121,11 +121,3 @@
   .fb-card-body{padding:20px 18px 20px;}
   .fb-card-body strong{font-size:31px;}
 }
-
-.brand{display:flex;align-items:center;gap:18px}
-.brand-wordmark,.brand-wordmark-inner{display:flex;align-items:center;gap:14px}
-.brand-wordmark-inner{position:relative}
-.brand-script{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:40px;color:var(--champagne)}
-.brand-block{font-size:14px;letter-spacing:.35em;color:var(--champagne)}
-.brand-sun{width:82px;height:82px;object-fit:contain;border-radius:0!important;border:none!important;box-shadow:none!important;background:transparent;margin-top:-10px}
-@media(max-width:768px){.brand-sun{width:46px;height:46px}.brand-script{font-size:28px}.brand-block{display:none}}
