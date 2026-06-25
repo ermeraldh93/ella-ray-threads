@@ -1,11 +1,13 @@
-# Ella Rae Threads v5
+# Ella Rae Threads v6
 
-Premium branded apparel homepage for ellaraethreads.com.
+Production-style static website update for ellaraethreads.com.
 
-## Upload instructions
-Upload the files INSIDE this folder to the root of the GitHub repo:
+Upload the files inside this folder to the GitHub repo root:
 - index.html
-- README.md
-- assets folder
-
-Do not upload the `ella-ray-threads-v5` folder itself.
+- services.html
+- products.html
+- portfolio.html
+- about.html
+- quote.html
+- contact.html
+- assets/
