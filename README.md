@@ -1,13 +1,3 @@
-# Ella Rae Threads v6
+# Ella Rae Threads v7
 
-Production-style static website update for ellaraethreads.com.
-
-Upload the files inside this folder to the GitHub repo root:
-- index.html
-- services.html
-- products.html
-- portfolio.html
-- about.html
-- quote.html
-- contact.html
-- assets/
+Updates: readable CTA button, Home nav link, circular header logo, 0-10 quantity option, expanded embroidery locations, and logo upload field on quote form.
