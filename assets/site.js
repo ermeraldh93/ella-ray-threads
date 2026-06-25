@@ -10,7 +10,7 @@ lb.addEventListener('click',e=>{if(e.target===lb||e.target.className==='close-li
 const fbPop=document.getElementById('fbPop');
 const fbClose=document.querySelector('.fb-close');
 if(fbPop && localStorage.getItem('ellaRaeFbPopClosed')!=='true'){
-  setTimeout(()=>fbPop.classList.add('show'),900);
+  setTimeout(()=>fbPop.classList.add('show'),4000);
 }
 fbClose?.addEventListener('click',()=>{
   fbPop?.classList.remove('show');

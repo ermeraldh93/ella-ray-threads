@@ -101,3 +101,23 @@
 .fb-card-body .fb-btn{background:#111;color:#fff}
 .fb-card-body .fb-btn:hover{background:var(--champagne);color:#111}
 @media(max-width:430px){.fb-video-cover{height:170px}.fb-card-body{padding:22px 18px 18px}}
+
+
+/* v14.2 - Taller Facebook popup video layout */
+.fb-pop{width:min(460px,calc(100vw - 28px));right:24px;bottom:24px;border-radius:26px;}
+.fb-card{max-height:calc(100vh - 48px);overflow:auto;}
+.fb-video-cover{height:min(58vh,520px);background:#0b0b0b;display:flex;align-items:center;justify-content:center;padding:12px;}
+.fb-preview-video{width:100%;height:100%;object-fit:contain;border-radius:18px;background:#000;}
+.fb-video-shade{display:none;}
+.fb-card-body{padding:24px 26px 26px;text-align:center;}
+.fb-card-body strong{font-size:36px;}
+.fb-card-body p{font-size:15px;}
+.fb-close{top:12px;right:12px;}
+@media(max-width:600px){
+  .fb-pop{left:14px;right:14px;bottom:14px;width:auto;border-radius:24px;}
+  .fb-card{max-height:calc(100vh - 28px);}
+  .fb-video-cover{height:54vh;padding:10px;}
+  .fb-preview-video{border-radius:16px;}
+  .fb-card-body{padding:20px 18px 20px;}
+  .fb-card-body strong{font-size:31px;}
+}

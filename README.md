@@ -17,3 +17,9 @@ Upload the files inside this folder to GitHub, not the folder itself.
 
 
 v14.1: Updated the Facebook popup to use the embroidery machine video in the top preview area.
+
+
+## v14.2 Update
+- Taller Facebook popup so the portrait embroidery video is fully visible.
+- Video uses contain instead of cover to avoid zoom/cropping.
+- Popup appears after a 4 second delay.
