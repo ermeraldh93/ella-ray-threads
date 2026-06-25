@@ -1,8 +1,11 @@
-# Ella Rae Threads v4
+# Ella Rae Threads v5
 
-Premium static website for Ella Rae Threads.
+Premium branded apparel homepage for ellaraethreads.com.
 
-Upload the contents of this folder to the root of the GitHub repository.
-Do not upload the folder itself.
+## Upload instructions
+Upload the files INSIDE this folder to the root of the GitHub repo:
+- index.html
+- README.md
+- assets folder
 
-Cloudflare Pages will automatically redeploy after the GitHub commit.
+Do not upload the `ella-ray-threads-v5` folder itself.
