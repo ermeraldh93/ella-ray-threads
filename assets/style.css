@@ -1929,3 +1929,65 @@ html, body {
     padding-bottom:130px !important;
   }
 }
+
+
+/* v19.3 emergency quote page menu repair */
+@media (max-width: 900px){
+  body.quote-page .site-header{
+    z-index:2147483640 !important;
+    position:sticky !important;
+    top:0 !important;
+    isolation:isolate !important;
+  }
+  body.quote-page .menu-toggle{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:52px !important;
+    height:52px !important;
+    color:#111 !important;
+    background:transparent !important;
+    border:0 !important;
+    position:relative !important;
+    z-index:2147483642 !important;
+    pointer-events:auto !important;
+    touch-action:manipulation !important;
+  }
+  body.quote-page .nav{
+    display:none !important;
+  }
+  body.quote-page .nav.open,
+  body.quote-page.nav-open .nav{
+    display:flex !important;
+    position:fixed !important;
+    top:86px !important;
+    left:0 !important;
+    right:0 !important;
+    width:100vw !important;
+    max-width:100vw !important;
+    z-index:2147483641 !important;
+    background:#fff !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    gap:12px !important;
+    padding:20px 6vw 24px !important;
+    box-shadow:0 24px 50px rgba(0,0,0,.14) !important;
+    border-bottom:1px solid var(--line) !important;
+    transform:none !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    pointer-events:auto !important;
+  }
+  body.quote-page .nav.open a,
+  body.quote-page.nav-open .nav a{
+    display:block !important;
+    width:100% !important;
+    text-align:center !important;
+    padding:13px 10px !important;
+    color:#111 !important;
+  }
+  body.quote-page .project-progress{
+    z-index:1000 !important;
+    pointer-events:none !important;
+  }
+}
