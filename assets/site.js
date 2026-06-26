@@ -118,3 +118,50 @@ portfolioFilters.forEach(btn => {
     });
   });
 });
+
+// Ella Rae quote form with secure file upload through Cloudflare Pages Functions
+const artworkUpload = document.getElementById('artworkUpload');
+const artworkFileLabel = document.getElementById('artworkFileLabel');
+artworkUpload?.addEventListener('change', () => {
+  const files = Array.from(artworkUpload.files || []);
+  if (artworkFileLabel) artworkFileLabel.textContent = files.length ? files.map(f => f.name).join(', ') : 'Drag your logo here or tap to browse.';
+});
+
+const projectForm = document.getElementById('projectForm');
+const projectFormStatus = document.getElementById('projectFormStatus');
+projectForm?.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const submitBtn = projectForm.querySelector('button[type="submit"]');
+  if (projectFormStatus) {
+    projectFormStatus.className = 'form-status is-loading';
+    projectFormStatus.textContent = 'Submitting your project request...';
+  }
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+  }
+  try {
+    const response = await fetch(projectForm.action, {
+      method: 'POST',
+      body: new FormData(projectForm)
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || result.success === false) throw new Error(result.message || 'Submission failed.');
+    if (projectFormStatus) {
+      projectFormStatus.className = 'form-status is-success';
+      projectFormStatus.textContent = result.message || "Thank you! Your project request has been received.";
+    }
+    projectForm.reset();
+    if (artworkFileLabel) artworkFileLabel.textContent = 'Drag your logo here or tap to browse.';
+  } catch (error) {
+    if (projectFormStatus) {
+      projectFormStatus.className = 'form-status is-error';
+      projectFormStatus.textContent = error.message || 'Something went wrong. Please try again.';
+    }
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Start My Project';
+    }
+  }
+});
