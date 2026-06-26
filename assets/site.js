@@ -233,3 +233,53 @@ refreshEllaRaeSelections();
   window.addEventListener('resize', updateStep, {passive:true});
   updateStep();
 })();
+
+// v19.2 — Bulletproof mobile menu + quote step tracker
+(function(){
+  function getNav(){ return document.querySelector('.site-header .nav') || document.querySelector('.nav'); }
+  function getToggle(){ return document.querySelector('.site-header .menu-toggle') || document.querySelector('.menu-toggle'); }
+  document.addEventListener('click', function(event){
+    const btn = event.target && event.target.closest ? event.target.closest('.menu-toggle') : null;
+    if(!btn) return;
+    event.preventDefault();
+    event.stopPropagation();
+    if(event.stopImmediatePropagation) event.stopImmediatePropagation();
+    const nav = getNav();
+    if(!nav) return;
+    const isOpen = nav.classList.toggle('open');
+    document.body.classList.toggle('nav-open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }, true);
+  document.addEventListener('click', function(event){
+    const navLink = event.target && event.target.closest ? event.target.closest('.nav a') : null;
+    if(!navLink) return;
+    const nav = getNav();
+    const btn = getToggle();
+    nav?.classList.remove('open');
+    document.body.classList.remove('nav-open');
+    btn?.setAttribute('aria-expanded','false');
+  });
+
+  const steps = Array.from(document.querySelectorAll('.project-step'));
+  const count = document.getElementById('mobileStepCount');
+  const title = document.getElementById('mobileStepTitle');
+  const links = Array.from(document.querySelectorAll('.progress-step'));
+  if(steps.length && count && title){
+    function update(){
+      let current = steps[0];
+      const marker = Math.min(window.innerHeight * 0.42, 360);
+      for(const step of steps){
+        if(step.getBoundingClientRect().top <= marker) current = step;
+      }
+      const no = current.dataset.step || '1';
+      const label = current.dataset.title || 'Choose Product';
+      count.textContent = `Step ${no} of 4`;
+      title.textContent = label;
+      links.forEach(link => link.classList.toggle('active', link.dataset.step === no));
+    }
+    window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update, {passive:true});
+    setTimeout(update, 50);
+    update();
+  }
+})();
