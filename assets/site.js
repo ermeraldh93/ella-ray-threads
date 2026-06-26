@@ -16,3 +16,14 @@ fbClose?.addEventListener('click',()=>{
   fbPop?.classList.remove('show');
   localStorage.setItem('ellaRaeFbPopClosed','true');
 });
+
+
+// v15: update project progress as visitors complete sections
+const productChoices=document.querySelectorAll('.product-choice input');
+const progressSteps=document.querySelectorAll('.progress-step');
+function activateStep(i){progressSteps.forEach((s,idx)=>s.classList.toggle('active',idx<=i));}
+productChoices.forEach(input=>input.addEventListener('change',()=>activateStep(1)));
+document.querySelector('.logo-upload input')?.addEventListener('change',()=>activateStep(2));
+document.querySelectorAll('[name="quantity"],[name="location"],[name="deadline"],[name="garment_color"]').forEach(el=>el.addEventListener('change',()=>activateStep(3)));
+document.querySelectorAll('[name="name"],[name="email"]').forEach(el=>el.addEventListener('input',()=>{if(document.querySelector('[name="name"]')?.value && document.querySelector('[name="email"]')?.value) activateStep(3)}));
+document.querySelector('.fb-btn')?.addEventListener('click',()=>localStorage.setItem('ellaRaeFbPopClosed','true'));

@@ -121,3 +121,45 @@
   .fb-card-body{padding:20px 18px 20px;}
   .fb-card-body strong{font-size:31px;}
 }
+
+
+/* v15 Launch Candidate: minimalist Start Your Project experience */
+.nav .quote-link{background:var(--ink);color:#fff!important;padding:14px 20px;border-radius:999px;letter-spacing:.14em}
+.project-hero{padding-bottom:3vw}
+.project-shell{max-width:1180px;margin:0 auto}
+.project-progress{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 42px;color:var(--muted)}
+.progress-step{display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;min-width:82px}
+.progress-step span{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;background:#fff;color:var(--muted);font-size:11px;letter-spacing:.08em}
+.progress-step.active span{background:var(--ink);border-color:var(--ink);color:#fff}
+.progress-step strong{font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;color:var(--muted)}
+.progress-line{width:80px;height:1px;background:var(--line)}
+.project-form{display:grid;gap:28px}
+.project-card{background:#fff;border:1px solid var(--line);border-radius:34px;padding:clamp(28px,4.5vw,56px);box-shadow:0 16px 45px rgba(0,0,0,.04)}
+.project-card h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(34px,4vw,54px);font-weight:400;margin:10px 0 8px;color:var(--ink)}
+.project-intro{color:var(--muted);line-height:1.7;max-width:650px;margin:0 0 28px}
+.product-choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.product-choice{position:relative;border:1px solid var(--line);border-radius:24px;background:var(--paper);padding:28px;min-height:150px;cursor:pointer;transition:.25s ease;display:flex;flex-direction:column;justify-content:flex-end}
+.product-choice input{position:absolute;opacity:0;pointer-events:none}
+.product-choice span{font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:400;color:var(--ink);display:block;margin-bottom:8px}
+.product-choice small{color:var(--muted);line-height:1.4;font-size:14px}
+.product-choice:has(input:checked),.product-choice:hover{border-color:var(--champagne);box-shadow:0 16px 40px rgba(0,0,0,.08);transform:translateY(-2px)}
+.logo-upload{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px dashed var(--champagne);border-radius:28px;background:var(--paper);padding:48px 24px;cursor:pointer;transition:.25s ease;color:var(--ink)}
+.logo-upload:hover{background:#fff;box-shadow:0 18px 50px rgba(0,0,0,.06)}
+.logo-upload input{display:none}
+.logo-upload span{font-family:Georgia,'Times New Roman',serif;font-size:34px;margin-bottom:8px;color:var(--ink)}
+.logo-upload small{color:var(--muted);letter-spacing:.04em}
+.simple-check{display:flex;align-items:center;gap:10px;margin-top:18px;color:var(--muted);line-height:1.5}
+.simple-check input{width:auto}
+.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.project-card .field label{color:var(--champagne)}
+.project-card input,.project-card select,.project-card textarea{background:var(--paper);border:1px solid var(--line);color:var(--ink)}
+.project-card textarea{min-height:120px}
+.project-card select option{color:#111}
+.pill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pill-grid label{border:1px solid var(--line);border-radius:999px;background:var(--paper);padding:13px 16px;color:var(--ink);font-size:14px;text-transform:none;letter-spacing:0;display:flex;align-items:center;gap:8px;cursor:pointer}
+.pill-grid input{width:auto}.pill-grid label:has(input:checked){border-color:var(--champagne);background:#fff}
+.project-submit{margin-top:28px;background:var(--ink);color:#fff;width:100%;max-width:320px}
+.next-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1100px;margin:34px auto 0}
+.next-grid article{background:#fff;border:1px solid var(--line);border-radius:26px;padding:28px;min-height:190px}
+.next-grid span{color:var(--champagne);font-weight:800;letter-spacing:.18em;font-size:12px}.next-grid h3{font-family:Georgia,'Times New Roman',serif;font-size:28px;font-weight:400;margin:18px 0 8px}.next-grid p{color:var(--muted);line-height:1.55;margin:0}
+@media(max-width:900px){.project-progress{gap:8px;overflow-x:auto;justify-content:flex-start;padding-bottom:8px}.progress-line{width:38px;min-width:38px}.progress-step{min-width:70px}.product-choice-grid,.details-grid,.pill-grid,.next-grid{grid-template-columns:1fr}.product-choice{min-height:128px;padding:24px}.project-card{border-radius:26px;padding:28px}.logo-upload{padding:38px 18px}.logo-upload span{font-size:28px}.project-submit{max-width:none}.nav .quote-link{width:100%;text-align:center;justify-content:center}}
