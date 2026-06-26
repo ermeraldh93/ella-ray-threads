@@ -1,7 +1,4 @@
-const ellaMenuToggle=document.querySelector('.menu-toggle');
-const ellaNav=document.querySelector('.nav');
-ellaMenuToggle?.addEventListener('click',(e)=>{e.preventDefault(); e.stopPropagation(); ellaNav?.classList.toggle('open');});
-ellaNav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>ellaNav.classList.remove('open')));
+document.querySelector('.menu-toggle')?.addEventListener('click',()=>document.querySelector('.nav').classList.toggle('open'));
 
 const lb=document.createElement('div');
 lb.className='lightbox';
@@ -172,13 +169,9 @@ projectForm?.addEventListener('submit', async (event) => {
       </div>`;
     const wrap = document.querySelector('.project-wrap');
     const whatNext = document.querySelector('.what-next');
-    const hero = document.querySelector('.project-hero');
-    hero?.remove();
     wrap?.replaceWith(thankYou);
     whatNext?.remove();
-    document.body.classList.add('quote-submitted');
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-    requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' }));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     projectForm.reset();
     if (artworkFileLabel) artworkFileLabel.textContent = 'Drag your logo here or tap to browse.';
     artworkUpload?.closest('.drop-zone')?.classList.remove('has-file');
@@ -194,92 +187,3 @@ projectForm?.addEventListener('submit', async (event) => {
     }
   }
 });
-
-// v18.7 - add selected class to form buttons for consistent gold highlight on mobile browsers
-function refreshEllaRaeSelections(){
-  document.querySelectorAll('.project-options label, .pill-options label').forEach(label => {
-    const input = label.querySelector('input');
-    label.classList.toggle('selected', !!input && input.checked);
-  });
-}
-document.addEventListener('change', (event) => {
-  if (event.target && event.target.matches('.project-options input, .pill-options input')) {
-    refreshEllaRaeSelections();
-  }
-});
-refreshEllaRaeSelections();
-
-// v19.1 — Reliable visible step tracker while scrolling
-(function(){
-  const steps = Array.from(document.querySelectorAll('.project-step'));
-  const progressLinks = Array.from(document.querySelectorAll('.progress-step'));
-  const count = document.getElementById('mobileStepCount');
-  const title = document.getElementById('mobileStepTitle');
-  if(!steps.length || !count || !title) return;
-  function updateStep(){
-    const probe = window.innerHeight * 0.38;
-    let current = steps[0];
-    for(const step of steps){
-      const rect = step.getBoundingClientRect();
-      if(rect.top <= probe) current = step;
-    }
-    const stepNo = current.dataset.step || '1';
-    const stepTitle = current.dataset.title || 'Choose Product';
-    count.textContent = `Step ${stepNo} of 4`;
-    title.textContent = stepTitle;
-    progressLinks.forEach(link => link.classList.toggle('active', link.dataset.step === stepNo));
-  }
-  window.addEventListener('scroll', updateStep, {passive:true});
-  window.addEventListener('resize', updateStep, {passive:true});
-  updateStep();
-})();
-
-// v19.2 — Bulletproof mobile menu + quote step tracker
-(function(){
-  function getNav(){ return document.querySelector('.site-header .nav') || document.querySelector('.nav'); }
-  function getToggle(){ return document.querySelector('.site-header .menu-toggle') || document.querySelector('.menu-toggle'); }
-  document.addEventListener('click', function(event){
-    const btn = event.target && event.target.closest ? event.target.closest('.menu-toggle') : null;
-    if(!btn) return;
-    event.preventDefault();
-    event.stopPropagation();
-    if(event.stopImmediatePropagation) event.stopImmediatePropagation();
-    const nav = getNav();
-    if(!nav) return;
-    const isOpen = nav.classList.toggle('open');
-    document.body.classList.toggle('nav-open', isOpen);
-    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  }, true);
-  document.addEventListener('click', function(event){
-    const navLink = event.target && event.target.closest ? event.target.closest('.nav a') : null;
-    if(!navLink) return;
-    const nav = getNav();
-    const btn = getToggle();
-    nav?.classList.remove('open');
-    document.body.classList.remove('nav-open');
-    btn?.setAttribute('aria-expanded','false');
-  });
-
-  const steps = Array.from(document.querySelectorAll('.project-step'));
-  const count = document.getElementById('mobileStepCount');
-  const title = document.getElementById('mobileStepTitle');
-  const links = Array.from(document.querySelectorAll('.progress-step'));
-  if(steps.length && count && title){
-    function update(){
-      let current = steps[0];
-      const marker = Math.min(window.innerHeight * 0.42, 360);
-      for(const step of steps){
-        if(step.getBoundingClientRect().top <= marker) current = step;
-      }
-      const no = current.dataset.step || '1';
-      const label = current.dataset.title || 'Choose Product';
-      count.textContent = `Step ${no} of 4`;
-      title.textContent = label;
-      links.forEach(link => link.classList.toggle('active', link.dataset.step === no));
-    }
-    window.addEventListener('scroll', update, {passive:true});
-    window.addEventListener('resize', update, {passive:true});
-    setTimeout(update, 50);
-    update();
-  }
-})();
