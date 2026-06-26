@@ -147,10 +147,30 @@ projectForm?.addEventListener('submit', async (event) => {
     });
     const result = await response.json().catch(() => ({}));
     if (!response.ok || result.success === false) throw new Error(result.message || 'Submission failed.');
-    if (projectFormStatus) {
-      projectFormStatus.className = 'form-status is-success';
-      projectFormStatus.textContent = result.message || "Thank you! Your project request has been received.";
-    }
+    const customerName = (new FormData(projectForm).get('name') || '').toString().trim();
+    const thankYou = document.createElement('section');
+    thankYou.className = 'quote-thank-you section';
+    thankYou.innerHTML = `
+      <div class="thank-you-card">
+        <div class="thank-you-mark">✓</div>
+        <span class="eyebrow">Request Received</span>
+        <h1>Thank you${customerName ? ', ' + customerName : ''}.</h1>
+        <p>Your project request has been received. We'll review your details and artwork, then contact you within one business day.</p>
+        <div class="thank-you-next">
+          <article><span>01</span><strong>We review your request</strong></article>
+          <article><span>02</span><strong>We prepare your quote</strong></article>
+          <article><span>03</span><strong>We contact you</strong></article>
+        </div>
+        <div class="thank-you-actions">
+          <a class="btn primary" href="index.html">Return Home</a>
+          <a class="btn outline" href="store.html">Browse Store</a>
+        </div>
+      </div>`;
+    const wrap = document.querySelector('.project-wrap');
+    const whatNext = document.querySelector('.what-next');
+    wrap?.replaceWith(thankYou);
+    whatNext?.remove();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     projectForm.reset();
     if (artworkFileLabel) artworkFileLabel.textContent = 'Drag your logo here or tap to browse.';
   } catch (error) {

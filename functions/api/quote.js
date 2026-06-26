@@ -9,6 +9,39 @@ function json(data, status = 200) {
   });
 }
 
+function wantsHtml(request) {
+  const accept = request.headers.get("accept") || "";
+  const requestedWith = request.headers.get("x-requested-with") || "";
+  return accept.includes("text/html") && !requestedWith.includes("XMLHttpRequest");
+}
+
+function htmlPage({ success, title, message, status = 200 }) {
+  const mark = success ? "✓" : "!";
+  const accent = success ? "#bfa37a" : "#b44";
+  return new Response(`<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${title} | Ella Rae Threads</title>
+<style>
+  body{margin:0;background:#fbfaf7;color:#111;font-family:Arial,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .card{width:min(760px,92vw);background:#fff;border:1px solid #e8e0d5;border-radius:32px;box-shadow:0 28px 90px rgba(0,0,0,.08);padding:54px 34px;text-align:center}
+  .mark{width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:${accent};color:#111;font-size:40px;font-weight:900;margin:0 auto 24px}
+  h1{font-family:Georgia,serif;font-size:clamp(38px,7vw,68px);font-weight:400;line-height:1;margin:0 0 16px}
+  p{color:#6b655d;font-size:18px;line-height:1.65;max-width:600px;margin:0 auto 30px}
+  .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:999px;padding:15px 24px;font-weight:900;letter-spacing:.04em}
+  .primary{background:#111;color:#fff}.secondary{border:1px solid #bfa37a;color:#111;background:#fff}
+  @media(max-width:640px){.card{padding:40px 22px}.actions a{width:100%}}
+</style>
+</head>
+<body><main class="card"><div class="mark">${mark}</div><h1>${title}</h1><p>${message}</p><div class="actions"><a class="primary" href="/">Return Home</a><a class="secondary" href="/store">Browse Store</a></div></main></body></html>`, {
+    status,
+    headers: { "content-type": "text/html; charset=utf-8" }
+  });
+}
+
 function clean(value) {
   return typeof value === "string" ? value.trim() : "";
 }
@@ -29,6 +62,7 @@ async function fileToken(key, env) {
 }
 
 export async function onRequestPost({ request, env }) {
+  const html = wantsHtml(request);
   try {
     const form = await request.formData();
 
@@ -98,11 +132,15 @@ export async function onRequestPost({ request, env }) {
       return json({ success: false, message: emailData.message || "Email notification failed. Please try again." }, 502);
     }
 
+    const successMessage = "Your project request has been received. We'll review your details and artwork, then contact you within one business day.";
+    if (html) return htmlPage({ success: true, title: "Thank You", message: successMessage });
     return json({
       success: true,
-      message: "Thank you! Your project request has been received. We'll review it and be in touch shortly."
+      message: successMessage
     });
   } catch (err) {
-    return json({ success: false, message: err?.message || "Something went wrong. Please try again." }, 500);
+    const message = err?.message || "Something went wrong. Please try again.";
+    if (html) return htmlPage({ success: false, title: "Submission Error", message, status: 500 });
+    return json({ success: false, message }, 500);
   }
 }
