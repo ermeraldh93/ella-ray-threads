@@ -288,3 +288,195 @@
 .why-grid-v16 article{border:0!important;box-shadow:0 18px 60px rgba(0,0,0,.055);background:#fff}
 .start-v16{padding-top:8vw;padding-bottom:8vw}
 @media(max-width:900px){.precision-v16{padding:76px 6vw 62px}.behind-v16 .behind-copy{padding:72px 6vw 34px}.behind-v16 .behind-video{height:58vh;min-height:360px}.why-v16{padding-top:78px;padding-bottom:78px}.start-v16{padding-top:70px;padding-bottom:70px}}
+
+/* v16.2 — UX correction: desktop video + mobile project tracker/layout */
+@media (min-width:901px){
+  .behind-v16{
+    padding-bottom:7vw;
+  }
+  .behind-v16 .behind-video-wrap{
+    width:min(1120px,88vw);
+    margin:0 auto;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 28px 80px rgba(0,0,0,.32);
+    background:#050505;
+  }
+  .behind-v16 .behind-video{
+    width:100%;
+    height:min(70vh,720px);
+    min-height:520px;
+    object-fit:contain;
+    background:#050505;
+  }
+}
+
+@media (max-width:1000px){
+  .project-wrap{
+    display:grid;
+    grid-template-columns:1fr;
+    justify-items:center;
+    padding:0 5vw 12vw;
+    gap:28px;
+  }
+  .project-progress{
+    position:sticky;
+    top:118px!important;
+    z-index:18;
+    width:min(720px,calc(100% - 18px))!important;
+    margin:0 auto 12px!important;
+    padding:16px 16px 14px!important;
+    border:1px solid rgba(228,222,213,.95)!important;
+    border-radius:24px!important;
+    background:rgba(255,255,255,.97)!important;
+    box-shadow:0 16px 40px rgba(0,0,0,.12)!important;
+    backdrop-filter:blur(14px);
+    text-align:center!important;
+    overflow:visible!important;
+  }
+  .progress-mobile{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+  }
+  .progress-mobile span{
+    color:#8e7147!important;
+  }
+  .progress-mobile strong{
+    color:#111!important;
+  }
+  .progress-track{
+    display:grid!important;
+    grid-template-columns:repeat(4,1fr);
+    gap:7px;
+    margin-top:12px;
+  }
+  .progress-step{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    padding:8px 4px;
+    border-radius:14px;
+  }
+  .progress-step span{
+    width:30px;
+    height:30px;
+    font-size:12px;
+  }
+  .progress-step em{
+    font-size:9px;
+    letter-spacing:.08em;
+    line-height:1.15;
+  }
+  .project-form{
+    width:100%;
+    max-width:900px;
+    margin:0 auto;
+    display:grid;
+    gap:28px;
+  }
+  .project-step{
+    width:100%;
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    scroll-margin-top:230px;
+    padding:34px 22px;
+    border-radius:30px;
+  }
+  .project-step p{
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .project-options{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+    max-width:760px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .project-options label{
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    min-height:150px;
+    padding:22px 14px;
+  }
+  .project-options span{
+    font-size:24px;
+  }
+  .detail-grid,.contact-form-grid{
+    max-width:760px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .detail-block,.field-light{
+    text-align:left;
+  }
+  .pill-options{
+    justify-content:center;
+  }
+  .drop-zone,.helper-card,.project-submit{
+    max-width:760px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .project-submit{
+    display:block;
+  }
+}
+
+@media (max-width:520px){
+  .project-progress{
+    top:104px!important;
+    width:min(100%,calc(100vw - 26px))!important;
+    padding:14px 12px 12px!important;
+  }
+  .progress-track{
+    gap:5px;
+  }
+  .progress-step{
+    padding:7px 2px;
+  }
+  .progress-step span{
+    width:27px;
+    height:27px;
+    font-size:11px;
+  }
+  .progress-step em{
+    font-size:8px;
+    letter-spacing:.04em;
+  }
+  .project-step{
+    padding:32px 18px;
+    border-radius:28px;
+    scroll-margin-top:220px;
+  }
+  .project-options{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+  .project-options label{
+    min-height:136px;
+    padding:18px 10px;
+  }
+  .project-options span{
+    font-size:22px;
+  }
+  .project-options small{
+    font-size:12px;
+  }
+}
+
+@media (max-width:380px){
+  .project-options{
+    grid-template-columns:1fr;
+  }
+  .progress-step em{
+    display:none;
+  }
+}
