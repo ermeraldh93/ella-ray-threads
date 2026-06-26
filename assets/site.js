@@ -104,3 +104,17 @@ document.querySelectorAll('.store-filter').forEach(filterBtn=>{
     });
   });
 });
+
+// v16.7 Portfolio professional filters
+const portfolioFilters = Array.from(document.querySelectorAll('.portfolio-filter'));
+const portfolioProjects = Array.from(document.querySelectorAll('.portfolio-project'));
+portfolioFilters.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.dataset.filter || 'all';
+    portfolioFilters.forEach(b => b.classList.toggle('active', b === btn));
+    portfolioProjects.forEach(project => {
+      const cats = (project.dataset.category || '').split(/\s+/);
+      project.classList.toggle('is-hidden', filter !== 'all' && !cats.includes(filter));
+    });
+  });
+});
