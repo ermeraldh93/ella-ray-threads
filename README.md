@@ -1,16 +1,13 @@
-# Ella Rae Threads v15 Launch Candidate
+# Ella Rae Threads v15.1
 
-This version adds the minimalist Start Your Project experience.
+Updates included:
+- Removed header wordmark; circular logo only.
+- Navigation simplified: Home, Portfolio, Start Your Project, About, Contact.
+- Contact page updated with “Exceptional Service Starts Here.”
+- Removed Start Your Project form section from Contact page.
+- Redesigned Facebook card/button.
+- Start Your Project page rebuilt as a minimalist guided experience.
+- Sticky progress indicator updates as users scroll through each step.
+- Mobile Start Your Project page improved for elegance, spacing, and contrast.
 
-## Included
-- Navigation changed to Home, Portfolio, Start Your Project, About, Contact
-- Products page removed from navigation and redirected to Start Your Project
-- New guided project form with progress steps
-- Product selection cards
-- Logo upload area
-- Project details and embroidery locations
-- What Happens Next section
-- Existing favicon/share assets retained
-- Existing Facebook popup retained
-
-Upload the files inside this folder to the root of the GitHub repository.
+Upload the files inside this folder to GitHub.

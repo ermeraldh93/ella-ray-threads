@@ -18,12 +18,27 @@ fbClose?.addEventListener('click',()=>{
 });
 
 
-// v15: update project progress as visitors complete sections
-const productChoices=document.querySelectorAll('.product-choice input');
-const progressSteps=document.querySelectorAll('.progress-step');
-function activateStep(i){progressSteps.forEach((s,idx)=>s.classList.toggle('active',idx<=i));}
-productChoices.forEach(input=>input.addEventListener('change',()=>activateStep(1)));
-document.querySelector('.logo-upload input')?.addEventListener('change',()=>activateStep(2));
-document.querySelectorAll('[name="quantity"],[name="location"],[name="deadline"],[name="garment_color"]').forEach(el=>el.addEventListener('change',()=>activateStep(3)));
-document.querySelectorAll('[name="name"],[name="email"]').forEach(el=>el.addEventListener('input',()=>{if(document.querySelector('[name="name"]')?.value && document.querySelector('[name="email"]')?.value) activateStep(3)}));
-document.querySelector('.fb-btn')?.addEventListener('click',()=>localStorage.setItem('ellaRaeFbPopClosed','true'));
+// v15.1 Start Your Project sticky progress
+const projectSteps = Array.from(document.querySelectorAll('.project-step'));
+const progressLinks = Array.from(document.querySelectorAll('.progress-step'));
+const mobileStepCount = document.getElementById('mobileStepCount');
+const mobileStepTitle = document.getElementById('mobileStepTitle');
+function setProjectStep(stepEl){
+  if(!stepEl) return;
+  const step = stepEl.dataset.step || '1';
+  const title = stepEl.dataset.title || 'Choose Product';
+  progressLinks.forEach(link=>link.classList.toggle('active', link.dataset.step === step));
+  if(mobileStepCount) mobileStepCount.textContent = `Step ${step} of 4`;
+  if(mobileStepTitle) mobileStepTitle.textContent = title;
+}
+if(projectSteps.length){
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{ if(entry.isIntersecting) setProjectStep(entry.target); });
+  }, {rootMargin:'-35% 0px -50% 0px', threshold:0.01});
+  projectSteps.forEach(step=>observer.observe(step));
+}
+
+document.querySelector('.fb-later')?.addEventListener('click',()=>{
+  fbPop?.classList.remove('show');
+  localStorage.setItem('ellaRaeFbPopClosed','true');
+});
