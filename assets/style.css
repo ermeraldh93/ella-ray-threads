@@ -1093,3 +1093,35 @@
 .drop-zone.has-file strong{color:#111!important}
 .drop-zone.has-file #artworkFileLabel{font-weight:800;color:#111!important}
 .project-options label,.pill-options span,.drop-zone{transition:background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+
+/* v18.4 - Mobile Facebook popup video full-width */
+@media (max-width: 600px){
+  .fb-pop{
+    left:0 !important;
+    right:0 !important;
+    bottom:0 !important;
+    width:100vw !important;
+    max-width:none !important;
+    border-radius:26px 26px 0 0 !important;
+  }
+  .fb-card{
+    max-height:calc(100vh - 18px) !important;
+    overflow:auto !important;
+  }
+  .fb-video-cover{
+    width:100% !important;
+    height:62vh !important;
+    padding:0 !important;
+    border-radius:26px 26px 0 0 !important;
+    background:#000 !important;
+  }
+  .fb-preview-video{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    border-radius:26px 26px 0 0 !important;
+  }
+  .fb-card-body{
+    padding:22px 22px 24px !important;
+  }
+}
