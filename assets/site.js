@@ -208,3 +208,28 @@ document.addEventListener('change', (event) => {
   }
 });
 refreshEllaRaeSelections();
+
+// v19.1 — Reliable visible step tracker while scrolling
+(function(){
+  const steps = Array.from(document.querySelectorAll('.project-step'));
+  const progressLinks = Array.from(document.querySelectorAll('.progress-step'));
+  const count = document.getElementById('mobileStepCount');
+  const title = document.getElementById('mobileStepTitle');
+  if(!steps.length || !count || !title) return;
+  function updateStep(){
+    const probe = window.innerHeight * 0.38;
+    let current = steps[0];
+    for(const step of steps){
+      const rect = step.getBoundingClientRect();
+      if(rect.top <= probe) current = step;
+    }
+    const stepNo = current.dataset.step || '1';
+    const stepTitle = current.dataset.title || 'Choose Product';
+    count.textContent = `Step ${stepNo} of 4`;
+    title.textContent = stepTitle;
+    progressLinks.forEach(link => link.classList.toggle('active', link.dataset.step === stepNo));
+  }
+  window.addEventListener('scroll', updateStep, {passive:true});
+  window.addEventListener('resize', updateStep, {passive:true});
+  updateStep();
+})();
