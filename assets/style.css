@@ -1050,5 +1050,3 @@
     font-size:14px;
   }
 }
-
-.form-status{margin-top:16px;border-radius:18px;padding:15px 18px;text-align:center;font-weight:800;line-height:1.45;display:none}.form-status.is-loading,.form-status.is-success,.form-status.is-error{display:block}.form-status.is-loading{background:#f4f1eb;color:#111;border:1px solid var(--line)}.form-status.is-success{background:#f6efe2;color:#111;border:1px solid var(--champagne)}.form-status.is-error{background:#fff1f1;color:#8a1f1f;border:1px solid #e4b5b5}.project-submit:disabled{opacity:.7;cursor:not-allowed}

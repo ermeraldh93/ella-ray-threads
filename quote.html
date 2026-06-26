@@ -10,7 +10,10 @@
       <a class="progress-step" href="#step-contact" data-step="4"><span>04</span><em>Contact Info</em></a>
     </div>
   </aside>
-  <form id="projectForm" class="project-form" action="/api/quote" method="POST" enctype="multipart/form-data">
+  <form class="project-form" action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="c640dd40-7c43-4bfd-807b-172317e3ac23">
+<input type="hidden" name="subject" value="New Quote Request - Ella Rae Threads">
+<input type="hidden" name="from_name" value="Ella Rae Threads Website">
 <input type="checkbox" name="botcheck" style="display:none">
 
     <section class="project-step" id="step-product" data-title="Choose Product" data-step="1">
@@ -24,19 +27,13 @@
         <label><input type="radio" name="product" value="Customer Supplied"><span>Customer Supplied</span><small>Have your own item? Tell us about it.</small></label>
       </div>
     </section>
-    <section class="project-step" id="step-logo" data-title="Upload Logo" data-step="2">
-      <span class="eyebrow">Step 2</span><h2>Upload your logo.</h2><p>Upload your logo, artwork, or inspiration file so we can review it with your quote request.</p>
-      <label class="drop-zone" for="artworkUpload">
-        <input id="artworkUpload" type="file" name="artwork" multiple accept=".ai,.eps,.svg,.pdf,.png,.jpg,.jpeg,.webp">
-        <strong>Choose Files</strong>
-        <span id="artworkFileLabel">Drag your logo here or tap to browse.</span>
-        <small>AI • EPS • SVG • PDF • PNG • JPG • WEBP</small>
-      </label>
+    <section class="project-step" id="step-logo" data-title="Artwork Details" data-step="2">
+      <span class="eyebrow">Step 2</span><h2>Artwork details.</h2><p>Tell us about your logo or design. You can email artwork after submitting your request.</p>
       <div class="detail-grid artwork-grid">
-        <div class="detail-block full"><label>Do you already have a logo or design?</label><div class="pill-options"><label><input type="radio" name="artwork_status" value="Yes, uploaded artwork"><span>Yes</span></label><label><input type="radio" name="artwork_status" value="Need design help"><span>Need Help</span></label><label><input type="radio" name="artwork_status" value="Not sure yet"><span>Not Sure</span></label></div></div>
-        <div class="detail-block full"><label>Artwork Notes</label><textarea name="artwork_notes" placeholder="Describe your logo, preferred thread colors, placement, or anything we should know."></textarea></div>
+        <div class="detail-block full"><label>Do you already have a logo or design?</label><div class="pill-options"><label><input type="radio" name="artwork_status" value="Yes, I have artwork"><span>Yes</span></label><label><input type="radio" name="artwork_status" value="Need design help"><span>Need Help</span></label><label><input type="radio" name="artwork_status" value="Not sure yet"><span>Not Sure</span></label></div></div>
+        <div class="detail-block full"><label>Artwork notes or file link</label><textarea name="artwork_notes" placeholder="Describe your logo, colors, or paste a Google Drive / Dropbox link if you have one."></textarea></div>
       </div>
-      <div class="helper-card"><strong>Artwork upload included.</strong><p>Your file will be securely uploaded with your quote request, and we’ll review it before contacting you.</p></div>
+      <div class="helper-card"><strong>Need to send a logo?</strong><p>Submit your request first, then reply to our follow-up email with your artwork. This keeps the quote form working on the free Web3Forms plan.</p></div>
     </section>
     <section class="project-step" id="step-details" data-title="Project Details" data-step="3">
       <span class="eyebrow">Step 3</span><h2>Project details.</h2><p>Share the basics so we can understand the scope of your order.</p>
@@ -51,7 +48,7 @@
     <section class="project-step" id="step-contact" data-title="Contact Info" data-step="4">
       <span class="eyebrow">Step 4</span><h2>Your information.</h2><p>We'll use this to follow up with your quote and next steps.</p>
       <div class="contact-form-grid"><div class="field-light"><label>Name</label><input name="name" required></div><div class="field-light"><label>Company</label><input name="company"></div><div class="field-light"><label>Email</label><input type="email" name="email" required></div><div class="field-light"><label>Phone</label><input name="phone"></div></div>
-      <button class="project-submit" type="submit">Start My Project</button><div id="projectFormStatus" class="form-status" aria-live="polite"></div>
+      <button class="project-submit" type="submit">Start My Project</button>
     </section>
   </form>
 </section>
