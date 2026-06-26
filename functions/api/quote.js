@@ -41,10 +41,10 @@ export async function onRequestPost({ request, env }) {
     const uploadNames = [];
     const files = form.getAll("artwork").filter(file => file && typeof file === "object" && file.name && file.size > 0).slice(0, MAX_FILES);
 
-    if (files.length && !env.QUOTE_UPLOADS) {
+    if (files.length && !env.UPLOADS) {
       return json({
         success: false,
-        message: "File upload storage is not configured yet. Add an R2 binding named QUOTE_UPLOADS in Cloudflare Pages."
+        message: "File upload storage is not configured yet. Add an R2 binding named UPLOADS in Cloudflare Pages."
       }, 500);
     }
 
@@ -53,7 +53,7 @@ export async function onRequestPost({ request, env }) {
         return json({ success: false, message: `${file.name} is too large. Max upload size is 10MB per file.` }, 400);
       }
       const key = `quote-uploads/${new Date().toISOString().slice(0,10)}/${Date.now()}-${crypto.randomUUID()}-${safeName(file.name)}`;
-      await env.QUOTE_UPLOADS.put(key, file.stream(), {
+      await env.UPLOADS.put(key, file.stream(), {
         httpMetadata: { contentType: file.type || "application/octet-stream" },
         customMetadata: {
           originalName: file.name,

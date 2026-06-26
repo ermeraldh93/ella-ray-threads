@@ -15,12 +15,12 @@ async function fileToken(key, env) {
 }
 export async function onRequestGet({ request, env }) {
   try {
-    if (!env.QUOTE_UPLOADS) return json({ success: false, message: "File storage is not configured." }, 500);
+    if (!env.UPLOADS) return json({ success: false, message: "File storage is not configured." }, 500);
     const url = new URL(request.url);
     const key = url.searchParams.get("key") || "";
     const token = url.searchParams.get("token") || "";
     if (!key || !token || token !== await fileToken(key, env)) return json({ success: false, message: "Invalid file link." }, 403);
-    const object = await env.QUOTE_UPLOADS.get(key);
+    const object = await env.UPLOADS.get(key);
     if (!object) return json({ success: false, message: "File not found." }, 404);
     const filename = object.customMetadata?.originalName || key.split('/').pop() || 'artwork-upload';
     return new Response(object.body, {
