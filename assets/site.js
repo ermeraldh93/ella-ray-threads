@@ -125,6 +125,7 @@ const artworkFileLabel = document.getElementById('artworkFileLabel');
 artworkUpload?.addEventListener('change', () => {
   const files = Array.from(artworkUpload.files || []);
   if (artworkFileLabel) artworkFileLabel.textContent = files.length ? files.map(f => f.name).join(', ') : 'Drag your logo here or tap to browse.';
+  artworkUpload.closest('.drop-zone')?.classList.toggle('has-file', files.length > 0);
 });
 
 const projectForm = document.getElementById('projectForm');
@@ -173,6 +174,7 @@ projectForm?.addEventListener('submit', async (event) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     projectForm.reset();
     if (artworkFileLabel) artworkFileLabel.textContent = 'Drag your logo here or tap to browse.';
+    artworkUpload?.closest('.drop-zone')?.classList.remove('has-file');
   } catch (error) {
     if (projectFormStatus) {
       projectFormStatus.className = 'form-status is-error';

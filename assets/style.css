@@ -1066,3 +1066,30 @@
 .thank-you-next strong{display:block;font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:400;color:#111;line-height:1.15}
 .thank-you-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 @media(max-width:720px){.quote-thank-you{padding:112px 18px 54px}.thank-you-card{border-radius:26px;padding:34px 22px}.thank-you-next{grid-template-columns:1fr}.thank-you-actions .btn{width:100%;justify-content:center}.thank-you-card p{font-size:16px}}
+
+
+/* v18.2 — selected button highlights */
+.project-options label:has(input:checked){
+  background:#111!important;
+  color:#fff!important;
+  border-color:#111!important;
+  box-shadow:0 18px 42px rgba(0,0,0,.16)!important;
+  transform:translateY(-2px);
+}
+.project-options label:has(input:checked) small{color:#e8dfd2!important}
+.project-options label:has(input:checked) span{color:#fff!important}
+.pill-options label:has(input:checked) span{
+  background:#111!important;
+  color:#fff!important;
+  border-color:#111!important;
+  box-shadow:0 10px 26px rgba(0,0,0,.14),0 0 0 2px rgba(191,163,122,.25)!important;
+}
+.pill-options label:has(input:checked)::after{content:none!important}
+.drop-zone.has-file{
+  border-color:#111!important;
+  background:#fffaf1!important;
+  box-shadow:0 0 0 2px rgba(191,163,122,.22),0 18px 42px rgba(0,0,0,.08)!important;
+}
+.drop-zone.has-file strong{color:#111!important}
+.drop-zone.has-file #artworkFileLabel{font-weight:800;color:#111!important}
+.project-options label,.pill-options span,.drop-zone{transition:background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
