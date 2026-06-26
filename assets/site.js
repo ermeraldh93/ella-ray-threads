@@ -1,4 +1,7 @@
-document.querySelector('.menu-toggle')?.addEventListener('click',()=>document.querySelector('.nav').classList.toggle('open'));
+const ellaMenuToggle=document.querySelector('.menu-toggle');
+const ellaNav=document.querySelector('.nav');
+ellaMenuToggle?.addEventListener('click',(e)=>{e.preventDefault(); e.stopPropagation(); ellaNav?.classList.toggle('open');});
+ellaNav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>ellaNav.classList.remove('open')));
 
 const lb=document.createElement('div');
 lb.className='lightbox';
@@ -169,9 +172,13 @@ projectForm?.addEventListener('submit', async (event) => {
       </div>`;
     const wrap = document.querySelector('.project-wrap');
     const whatNext = document.querySelector('.what-next');
+    const hero = document.querySelector('.project-hero');
+    hero?.remove();
     wrap?.replaceWith(thankYou);
     whatNext?.remove();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.body.classList.add('quote-submitted');
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' }));
     projectForm.reset();
     if (artworkFileLabel) artworkFileLabel.textContent = 'Drag your logo here or tap to browse.';
     artworkUpload?.closest('.drop-zone')?.classList.remove('has-file');
