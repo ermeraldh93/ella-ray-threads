@@ -93,3 +93,14 @@ cartItemsEl?.addEventListener('click',e=>{
 });
 cartNotes?.addEventListener('input',renderCart);
 renderCart();
+
+// v16.4 Store collection filters
+document.querySelectorAll('.store-filter').forEach(filterBtn=>{
+  filterBtn.addEventListener('click',()=>{
+    const filter=filterBtn.dataset.filter || 'all';
+    document.querySelectorAll('.store-filter').forEach(b=>b.classList.toggle('active', b===filterBtn));
+    document.querySelectorAll('.florida-product').forEach(item=>{
+      item.classList.toggle('is-hidden', filter !== 'all' && item.dataset.category !== filter);
+    });
+  });
+});
