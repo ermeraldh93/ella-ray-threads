@@ -1125,3 +1125,163 @@
     padding:22px 22px 24px !important;
   }
 }
+
+/* v18.5 — popup sizing + centered quote page + gold selected states */
+html, body{overflow-x:hidden!important;}
+
+/* Make selected project buttons clearly highlighted in Ella Rae gold */
+.project-options label:has(input:checked){
+  background:var(--champagne)!important;
+  color:#111!important;
+  border-color:var(--champagne)!important;
+  box-shadow:0 16px 38px rgba(191,163,122,.34),0 0 0 2px rgba(191,163,122,.24)!important;
+  transform:translateY(-2px);
+}
+.project-options label:has(input:checked) span,
+.project-options label:has(input:checked) small{color:#111!important;}
+.pill-options label:has(input:checked) span{
+  background:var(--champagne)!important;
+  color:#111!important;
+  border-color:var(--champagne)!important;
+  box-shadow:0 10px 28px rgba(191,163,122,.30),0 0 0 2px rgba(191,163,122,.18)!important;
+}
+
+/* Keep Start Your Project page centered and prevent side-to-side movement */
+.project-wrap{
+  width:min(1280px,100%);
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.project-form{
+  width:100%;
+  min-width:0;
+}
+.project-step{
+  width:100%;
+  max-width:100%;
+}
+.project-options,
+.detail-grid,
+.contact-form-grid,
+.pill-options{
+  min-width:0;
+}
+.project-options label,
+.pill-options span,
+.detail-block input,
+.detail-block textarea,
+.field-light input,
+.drop-zone{
+  max-width:100%;
+}
+
+@media (max-width:1000px){
+  .project-wrap{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    width:100%!important;
+    padding-left:18px!important;
+    padding-right:18px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+  .project-progress{
+    position:sticky!important;
+    top:104px!important;
+    width:min(560px,100%)!important;
+    margin:0 auto 14px!important;
+    left:auto!important;
+    right:auto!important;
+    text-align:center!important;
+    border-radius:22px!important;
+  }
+  .project-form{
+    width:min(760px,100%)!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+  .project-step{
+    width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    text-align:center!important;
+  }
+  .project-step p{
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+  .project-options{
+    width:100%!important;
+    grid-template-columns:1fr!important;
+  }
+  .detail-grid,
+  .contact-form-grid{
+    width:100%!important;
+    grid-template-columns:1fr!important;
+  }
+  .detail-block,
+  .field-light{
+    text-align:left!important;
+  }
+  .pill-options{
+    justify-content:center!important;
+  }
+}
+
+@media (max-width:600px){
+  .project-wrap{
+    padding-left:16px!important;
+    padding-right:16px!important;
+  }
+  .project-progress{
+    top:100px!important;
+    width:100%!important;
+    padding:14px 16px!important;
+  }
+  .project-step{
+    padding:26px 18px!important;
+  }
+  .pill-options{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+  }
+  .pill-options span{
+    width:100%!important;
+    text-align:center!important;
+  }
+}
+
+/* Facebook popup: full width on mobile, but not too tall */
+@media (max-width:600px){
+  .fb-pop{
+    left:0!important;
+    right:0!important;
+    bottom:0!important;
+    width:100vw!important;
+    max-width:none!important;
+    border-radius:24px 24px 0 0!important;
+  }
+  .fb-card{
+    max-height:calc(100vh - 28px)!important;
+    overflow:auto!important;
+  }
+  .fb-video-cover{
+    width:100%!important;
+    height:min(42vh,340px)!important;
+    min-height:250px!important;
+    padding:0!important;
+    border-radius:24px 24px 0 0!important;
+    background:#000!important;
+  }
+  .fb-preview-video{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    border-radius:24px 24px 0 0!important;
+  }
+  .fb-card-body{
+    padding:20px 22px 24px!important;
+  }
+}
