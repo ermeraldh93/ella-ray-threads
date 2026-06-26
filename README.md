@@ -1,3 +1,4 @@
+v18.6: Fixed mobile quote page horizontal overflow and centered Start Your Project layout.
 Ella Rae Threads v17 — Upload Ready
 - Quote form submits to Cloudflare Pages Function at /api/quote
 - Customers can upload logo/artwork files
