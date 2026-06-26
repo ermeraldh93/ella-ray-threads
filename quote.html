@@ -1,16 +1,16 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Start Your Project | Ella Rae Threads</title><meta name="description" content="Premium custom embroidery for businesses, teams and boutique brands in Tampa Bay."><link rel="stylesheet" href="assets/style.css"></head><body><header class="site-header"><a class="brand" href="index.html" aria-label="Ella Rae Threads home"><img src="assets/logo.jpg" alt="Ella Rae Threads logo"></a><button class="menu-toggle" aria-label="Open menu">☰</button><nav class="nav"><a href="index.html">Home</a><a href="portfolio.html">Portfolio</a><a href="store.html">Store</a><a class="quote-link" href="quote.html">Start Your Project</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header><main>
-<section class="page-hero project-hero"><span class="eyebrow">Start Your Project</span><h1>Begin your custom embroidery project.</h1><p>Choose your product, upload your logo, and share a few details. We'll take it from there.</p></section>
+<section class="page-hero project-hero"><span class="eyebrow">Start Your Project</span><h1>Begin your custom embroidery project.</h1><p>Choose your product, share your artwork details, and tell us about your project. We'll take it from there.</p></section>
 <section class="project-wrap">
   <aside class="project-progress" aria-label="Project progress">
     <div class="progress-mobile"><span id="mobileStepCount">Step 1 of 4</span><strong id="mobileStepTitle">Choose Product</strong></div>
     <div class="progress-track">
       <a class="progress-step active" href="#step-product" data-step="1"><span>01</span><em>Choose Product</em></a>
-      <a class="progress-step" href="#step-logo" data-step="2"><span>02</span><em>Upload Logo</em></a>
+      <a class="progress-step" href="#step-logo" data-step="2"><span>02</span><em>Artwork Details</em></a>
       <a class="progress-step" href="#step-details" data-step="3"><span>03</span><em>Project Details</em></a>
       <a class="progress-step" href="#step-contact" data-step="4"><span>04</span><em>Contact Info</em></a>
     </div>
   </aside>
-  <form class="project-form" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+  <form class="project-form" action="https://api.web3forms.com/submit" method="POST">
 <input type="hidden" name="access_key" value="c640dd40-7c43-4bfd-807b-172317e3ac23">
 <input type="hidden" name="subject" value="New Quote Request - Ella Rae Threads">
 <input type="hidden" name="from_name" value="Ella Rae Threads Website">
@@ -27,10 +27,13 @@
         <label><input type="radio" name="product" value="Customer Supplied"><span>Customer Supplied</span><small>Have your own item? Tell us about it.</small></label>
       </div>
     </section>
-    <section class="project-step" id="step-logo" data-title="Upload Logo" data-step="2">
-      <span class="eyebrow">Step 2</span><h2>Upload your logo.</h2><p>Send your logo or artwork so we can review it for embroidery.</p>
-      <label class="drop-zone"><input type="file" name="logo" accept="image/*,.pdf,.ai,.eps,.svg"><strong>Drag your logo here</strong><span>or browse files</span><small>AI · SVG · PDF · PNG · JPG</small></label>
-      <div class="helper-card"><strong>Don't have embroidery-ready artwork?</strong><p>We can help prepare your design for stitching and guide you through the best placement options.</p></div>
+    <section class="project-step" id="step-logo" data-title="Artwork Details" data-step="2">
+      <span class="eyebrow">Step 2</span><h2>Artwork details.</h2><p>Tell us about your logo or design. You can email artwork after submitting your request.</p>
+      <div class="detail-grid artwork-grid">
+        <div class="detail-block full"><label>Do you already have a logo or design?</label><div class="pill-options"><label><input type="radio" name="artwork_status" value="Yes, I have artwork"><span>Yes</span></label><label><input type="radio" name="artwork_status" value="Need design help"><span>Need Help</span></label><label><input type="radio" name="artwork_status" value="Not sure yet"><span>Not Sure</span></label></div></div>
+        <div class="detail-block full"><label>Artwork notes or file link</label><textarea name="artwork_notes" placeholder="Describe your logo, colors, or paste a Google Drive / Dropbox link if you have one."></textarea></div>
+      </div>
+      <div class="helper-card"><strong>Need to send a logo?</strong><p>Submit your request first, then reply to our follow-up email with your artwork. This keeps the quote form working on the free Web3Forms plan.</p></div>
     </section>
     <section class="project-step" id="step-details" data-title="Project Details" data-step="3">
       <span class="eyebrow">Step 3</span><h2>Project details.</h2><p>Share the basics so we can understand the scope of your order.</p>
