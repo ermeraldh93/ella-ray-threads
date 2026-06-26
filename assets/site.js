@@ -187,3 +187,17 @@ projectForm?.addEventListener('submit', async (event) => {
     }
   }
 });
+
+// v18.7 - add selected class to form buttons for consistent gold highlight on mobile browsers
+function refreshEllaRaeSelections(){
+  document.querySelectorAll('.project-options label, .pill-options label').forEach(label => {
+    const input = label.querySelector('input');
+    label.classList.toggle('selected', !!input && input.checked);
+  });
+}
+document.addEventListener('change', (event) => {
+  if (event.target && event.target.matches('.project-options input, .pill-options input')) {
+    refreshEllaRaeSelections();
+  }
+});
+refreshEllaRaeSelections();
