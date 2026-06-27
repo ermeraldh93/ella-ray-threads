@@ -1350,3 +1350,14 @@ html,body{max-width:100%;overflow-x:hidden;}
   .thank-you-next{grid-template-columns:1fr;}
   .thank-you-actions .btn{width:100%;}
 }
+
+
+/* v20.1 — Quote page mobile heading refinement */
+.quote-step-head .eyebrow{display:block;text-align:center;}
+@media(max-width:700px){
+  .quote-step-head{ text-align:center!important; }
+  .quote-step-head h2,
+  .quote-step-head p,
+  .quote-step-head .eyebrow{ text-align:center!important; margin-left:auto!important; margin-right:auto!important; }
+  .quote-clean-card{ padding-top:34px!important; padding-bottom:34px!important; }
+}
