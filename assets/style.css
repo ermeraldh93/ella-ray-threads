@@ -1361,3 +1361,34 @@ html,body{max-width:100%;overflow-x:hidden;}
   .quote-step-head .eyebrow{ text-align:center!important; margin-left:auto!important; margin-right:auto!important; }
   .quote-clean-card{ padding-top:34px!important; padding-bottom:34px!important; }
 }
+
+/* v20.2 — Store mobile filter menu fix: no horizontal swipe required */
+@media(max-width:700px){
+  .store-toolbar{
+    width:min(430px,90vw)!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    align-items:center!important;
+  }
+  .store-filters{
+    width:100%!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+    overflow:visible!important;
+    padding:0!important;
+    touch-action:auto!important;
+  }
+  .store-filter{
+    width:100%!important;
+    min-width:0!important;
+    text-align:center!important;
+    justify-content:center!important;
+    padding:13px 10px!important;
+    white-space:normal!important;
+    line-height:1.15!important;
+  }
+  .store-filter:first-child{
+    grid-column:1 / -1;
+  }
+}
