@@ -187,3 +187,39 @@ projectForm?.addEventListener('submit', async (event) => {
     }
   }
 });
+
+
+// v18.5.1 — robust live step tracker fallback for the stable quote page
+(function(){
+  const steps = Array.from(document.querySelectorAll('.project-step'));
+  const links = Array.from(document.querySelectorAll('.progress-step'));
+  const mobileCount = document.getElementById('mobileStepCount');
+  const mobileTitle = document.getElementById('mobileStepTitle');
+  if(!steps.length) return;
+  function updateStep(){
+    const marker = window.innerHeight * 0.38;
+    let current = steps[0];
+    for(const step of steps){
+      const rect = step.getBoundingClientRect();
+      if(rect.top <= marker) current = step;
+    }
+    const stepNum = current.dataset.step || '1';
+    const title = current.dataset.title || 'Choose Product';
+    links.forEach(link => link.classList.toggle('active', link.dataset.step === stepNum));
+    if(mobileCount) mobileCount.textContent = `Step ${stepNum} of 4`;
+    if(mobileTitle) mobileTitle.textContent = title;
+  }
+  updateStep();
+  window.addEventListener('scroll', updateStep, {passive:true});
+  window.addEventListener('resize', updateStep);
+  links.forEach(link=>{
+    link.addEventListener('click', function(e){
+      const target = document.querySelector(this.getAttribute('href'));
+      if(!target) return;
+      e.preventDefault();
+      const offset = window.innerWidth <= 1000 ? 210 : 135;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({top, behavior:'smooth'});
+    });
+  });
+})();
