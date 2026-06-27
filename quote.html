@@ -1,12 +1,21 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Start Your Project | Ella Rae Threads</title><meta name="description" content="Premium custom embroidery for businesses, teams and boutique brands in Tampa Bay."><link rel="stylesheet" href="assets/style.css"></head><body><header class="site-header"><a class="brand" href="index.html" aria-label="Ella Rae Threads home"><img src="assets/logo.jpg" alt="Ella Rae Threads logo"></a><button class="menu-toggle" aria-label="Open menu">☰</button><nav class="nav"><a href="index.html">Home</a><a href="portfolio.html">Portfolio</a><a href="store.html">Store</a><a class="quote-link" href="quote.html">Start Your Project</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header><main>
-<section class="page-hero project-hero"><span class="eyebrow">Start Your Project</span><h1>Begin your custom embroidery project.</h1><p>Choose your product, share your artwork details, and tell us about your project. We'll take it from there.</p></section>
-<section class="project-wrap">
-  <form id="projectForm" class="project-form" action="/api/quote" method="POST" enctype="multipart/form-data">
-<input type="checkbox" name="botcheck" style="display:none">
+<section class="page-hero project-hero quote-clean-hero">
+  <span class="eyebrow">Start Your Project</span>
+  <h1>Create your custom order.</h1>
+  <p>Tell us what you need, upload your artwork, and we’ll review everything before reaching out with next steps.</p>
+</section>
 
-    <section class="project-step" id="step-product" data-title="Choose Product" data-step="1">
-      <span class="eyebrow">Step 1</span><h2>Choose your product.</h2><p>Select the item that best matches your project.</p>
-      <div class="project-options product-options">
+<section class="quote-clean-wrap">
+  <form id="projectForm" class="quote-clean-form" action="/api/quote" method="POST" enctype="multipart/form-data">
+    <input type="checkbox" name="botcheck" style="display:none">
+
+    <section class="quote-clean-card" id="step-product">
+      <div class="quote-step-head">
+        <span class="eyebrow">01</span>
+        <h2>Choose your product.</h2>
+        <p>Select the item that best matches your project.</p>
+      </div>
+      <div class="project-options product-options quote-product-grid">
         <label><input type="radio" name="product" value="Hats"><span>Hats</span><small>Custom embroidered caps and headwear.</small></label>
         <label><input type="radio" name="product" value="Polos"><span>Polos</span><small>Professional embroidered business apparel.</small></label>
         <label><input type="radio" name="product" value="T-Shirts"><span>T-Shirts</span><small>Casual pieces for teams, events, and brands.</small></label>
@@ -15,23 +24,32 @@
         <label><input type="radio" name="product" value="Customer Supplied"><span>Customer Supplied</span><small>Have your own item? Tell us about it.</small></label>
       </div>
     </section>
-    <section class="project-step" id="step-logo" data-title="Upload Logo" data-step="2">
-      <span class="eyebrow">Step 2</span><h2>Upload your logo.</h2><p>Upload your logo, artwork, or inspiration file so we can review it with your quote request.</p>
-      <label class="drop-zone" for="artworkUpload">
+
+    <section class="quote-clean-card" id="step-logo">
+      <div class="quote-step-head">
+        <span class="eyebrow">02</span>
+        <h2>Upload your logo.</h2>
+        <p>Upload your logo, artwork, or inspiration file so we can review it with your request.</p>
+      </div>
+      <label class="drop-zone quote-drop-zone" for="artworkUpload">
         <input id="artworkUpload" type="file" name="artwork" multiple accept=".ai,.eps,.svg,.pdf,.png,.jpg,.jpeg,.webp">
         <strong>Choose Files</strong>
         <span id="artworkFileLabel">Drag your logo here or tap to browse.</span>
         <small>AI • EPS • SVG • PDF • PNG • JPG • WEBP</small>
       </label>
-      <div class="detail-grid artwork-grid">
+      <div class="detail-grid quote-detail-grid artwork-grid">
         <div class="detail-block full"><label>Do you already have a logo or design?</label><div class="pill-options"><label><input type="radio" name="artwork_status" value="Yes, uploaded artwork"><span>Yes</span></label><label><input type="radio" name="artwork_status" value="Need design help"><span>Need Help</span></label><label><input type="radio" name="artwork_status" value="Not sure yet"><span>Not Sure</span></label></div></div>
         <div class="detail-block full"><label>Artwork Notes</label><textarea name="artwork_notes" placeholder="Describe your logo, preferred thread colors, placement, or anything we should know."></textarea></div>
       </div>
-      <div class="helper-card"><strong>Artwork upload included.</strong><p>Your file will be securely uploaded with your quote request, and we’ll review it before contacting you.</p></div>
     </section>
-    <section class="project-step" id="step-details" data-title="Project Details" data-step="3">
-      <span class="eyebrow">Step 3</span><h2>Project details.</h2><p>Share the basics so we can understand the scope of your order.</p>
-      <div class="detail-grid">
+
+    <section class="quote-clean-card" id="step-details">
+      <div class="quote-step-head">
+        <span class="eyebrow">03</span>
+        <h2>Project details.</h2>
+        <p>Share the basics so we can understand the scope of your order.</p>
+      </div>
+      <div class="detail-grid quote-detail-grid">
         <div class="detail-block"><label>Quantity</label><div class="pill-options"><label><input type="radio" name="quantity" value="0-10"><span>0–10</span></label><label><input type="radio" name="quantity" value="11-25"><span>11–25</span></label><label><input type="radio" name="quantity" value="26-50"><span>26–50</span></label><label><input type="radio" name="quantity" value="51-100"><span>51–100</span></label><label><input type="radio" name="quantity" value="100+"><span>100+</span></label></div></div>
         <div class="detail-block"><label>Embroidery Location</label><div class="pill-options locations"><label><input type="checkbox" name="location" value="Hat Front"><span>Hat Front</span></label><label><input type="checkbox" name="location" value="Hat Side"><span>Hat Side</span></label><label><input type="checkbox" name="location" value="Left Chest"><span>Left Chest</span></label><label><input type="checkbox" name="location" value="Sleeve"><span>Sleeve</span></label><label><input type="checkbox" name="location" value="Back"><span>Back</span></label><label><input type="checkbox" name="location" value="Multiple"><span>Multiple</span></label></div></div>
         <div class="detail-block"><label>Need apparel supplied?</label><div class="pill-options"><label><input type="radio" name="apparel_supplied" value="Yes"><span>Yes</span></label><label><input type="radio" name="apparel_supplied" value="No"><span>No</span></label><label><input type="radio" name="apparel_supplied" value="Not Sure"><span>Not Sure</span></label></div></div>
@@ -39,14 +57,20 @@
         <div class="detail-block full"><label>Additional Details</label><textarea name="notes" placeholder="Garment color, brand preference, event date, design help, or anything else we should know."></textarea></div>
       </div>
     </section>
-    <section class="project-step" id="step-contact" data-title="Contact Info" data-step="4">
-      <span class="eyebrow">Step 4</span><h2>Your information.</h2><p>We'll use this to follow up with your quote and next steps.</p>
-      <div class="contact-form-grid"><div class="field-light"><label>Name</label><input name="name" required></div><div class="field-light"><label>Company</label><input name="company"></div><div class="field-light"><label>Email</label><input type="email" name="email" required></div><div class="field-light"><label>Phone</label><input name="phone"></div></div>
-      <button class="project-submit" type="submit">Start My Project</button><div id="projectFormStatus" class="form-status" aria-live="polite"></div>
+
+    <section class="quote-clean-card" id="step-contact">
+      <div class="quote-step-head">
+        <span class="eyebrow">04</span>
+        <h2>Your information.</h2>
+        <p>We’ll use this to follow up with your quote and next steps.</p>
+      </div>
+      <div class="contact-form-grid quote-contact-grid"><div class="field-light"><label>Name</label><input name="name" required></div><div class="field-light"><label>Company</label><input name="company"></div><div class="field-light"><label>Email</label><input type="email" name="email" required></div><div class="field-light"><label>Phone</label><input name="phone"></div></div>
+      <button class="project-submit quote-submit" type="submit">Start My Project</button><div id="projectFormStatus" class="form-status" aria-live="polite"></div>
     </section>
   </form>
 </section>
-<section class="section what-next"><div class="center-head"><span class="eyebrow">What Happens Next?</span><h2>Simple from start to finish.</h2></div><div class="next-steps"><article><span>01</span><strong>Submit Project</strong></article><article><span>02</span><strong>We Review Everything</strong></article><article><span>03</span><strong>We Contact You</strong></article><article><span>04</span><strong>Production Begins</strong></article><article><span>05</span><strong>Pickup or Shipping</strong></article></div></section>
+
+<section class="section what-next quote-clean-next"><div class="center-head"><span class="eyebrow">What Happens Next?</span><h2>Simple from start to finish.</h2></div><div class="next-steps"><article><span>01</span><strong>Submit Project</strong></article><article><span>02</span><strong>We Review Everything</strong></article><article><span>03</span><strong>We Contact You</strong></article><article><span>04</span><strong>Production Begins</strong></article><article><span>05</span><strong>Pickup or Shipping</strong></article></div></section>
 </main><footer class="footer"><div><img src="assets/logo.jpg" alt="Ella Rae Threads logo" class="footer-logo"><p>Premium custom embroidery for businesses, teams, and boutique brands.</p></div><div><h4>Explore</h4><a href="index.html">Home</a><a href="portfolio.html">Portfolio</a><a href="store.html">Store</a><a href="quote.html">Start Your Project</a><a href="about.html">About</a><a href="contact.html">Contact</a></div><div><h4>Contact</h4><a href="mailto:ellaraethreads@gmail.com">ellaraethreads@gmail.com</a><p>Tampa Bay, Florida</p><a href="https://www.facebook.com/share/18rKJjrLxv/?mibextid=wwXIfr">Facebook</a></div></footer>
 <div class="fb-pop" id="fbPop" aria-live="polite">
   <button class="fb-close" type="button" aria-label="Close Facebook pop-up">×</button>
